@@ -1,9 +1,9 @@
 const mysql = require("promise-mysql");
 
 if (!process.env.HOST_DB) {
-  var config = require("../config");
-} else {
   var config = require("../config-exemple");
+} else {
+  var config = require("../config");
 }
 
 const host = process.env.HOST_DB || config.db.host;
