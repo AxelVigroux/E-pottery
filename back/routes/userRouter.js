@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 let config = require("../config");
 let secret = config.token.secret;
 const withAuth = require("../withAuth");
+const sendMail = require("../utils/mailer");
 
 //GET USER BY ID
 router.get("/user/:id", async (req, res) => {
@@ -18,6 +19,15 @@ router.get("/user/:id", async (req, res) => {
   res.json({ satus: 200, results: user });
 });
 
+/** GET CREATORS */
+router.get("/users/creators/", async function (req, res) {
+  const creators = await UserModel.getCreators();
+
+  if (creators.code) {
+    res.json({ status: 500, error: creators });
+  }
+  res.json({ status: 200, results: creators });
+});
 // GET ALL USERS
 router.get("/users", async (req, res) => {
   let users = await UserModel.getAllUsers();
@@ -71,7 +81,46 @@ router.put("/user/update/:id", withAuth, async (req, res) => {
 
   let user = await UserModel.updateUser(id, req);
 
-  res.json({ status: 200, result: user });
+  if (user.code) {
+    res.json({ status: 500, error: user });
+  }
+  res.json({ satuts: 200, results: user });
+});
+
+router.post("/contact", function (req, res) {
+  const to = "axelvigroux@gmail.com";
+  const from = req.body.name;
+  const subject = "Contact message from Epottery";
+  const message = req.body.email + "</br>" + req.body.message;
+
+  sendMail(to, from, subject, message)
+    .then((result) => {
+      console.log(result);
+      res.json(result);
+    })
+    .catch((err) => {
+      res.json(err.message);
+    });
+});
+
+router.post("/user/newsletter", async function (req, res) {
+  const subscriber = await UserModel.newsletterSubscribe(req);
+  const to = req.body.mail;
+  const from = "axelvigroux@gmail.com";
+  const subject = "Epottery's newsletter";
+  const html = "Welcome among us !";
+
+  if (subscriber.code) {
+    console.log("SUB", subscriber);
+    res.json({ status: 500, message: subscriber });
+  }
+  sendMail(to, from, subject, html)
+    .then((result) => {
+      res.json(result);
+    })
+    .catch((err) => {
+      res.json(err.message);
+    });
 });
 
 module.exports = router;

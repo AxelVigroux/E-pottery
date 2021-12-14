@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { connect } from "react-redux";
 import { modifyCart, deleteItem } from "../actions/cart/cartAction";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import Plus from "../assets/images/plus-solid.svg";
 import Minus from "../assets/images/minus-solid.svg";
 
 const Cart = (props) => {
+  const [redirect, setRedirect] = useState(false);
+
   return (
     <div className="cart-main">
+      {redirect && <Redirect to="/payment" />}
       <h1>Hi cart</h1>
       {props.cart.cart.length > 0 ? (
         <div className="cart-table">
@@ -67,9 +70,17 @@ const Cart = (props) => {
               </tr>
             );
           })}
+          <button
+            className="add-cart"
+            onClick={(e) => {
+              setRedirect(true);
+            }}
+          >
+            Proceed to payment
+          </button>
         </div>
       ) : (
-        <h1>You caret is empty..</h1>
+        <h1>You cart is empty..</h1>
       )}
     </div>
   );

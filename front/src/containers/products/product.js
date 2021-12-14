@@ -8,24 +8,21 @@ import cart from "../../assets/images/Cart.svg";
 import { modifyCart } from "../../actions/cart/cartAction";
 
 const Product = (props) => {
-  const [product, setProduct] = useState([]);
   const [item, setItem] = useState([]);
   const [redirect, setRedirect] = useState(false);
 
   const dispatch = useDispatch();
 
   let { id } = props.match.params;
-  let index = id - 1;
-
-  let user_id = props.product.products[index].user_id;
 
   useEffect(() => {
     axios.get(config.api_url + "/product/" + id).then((response) => {
+      console.log("RESPONSE", response.data.results[0]);
       setItem(response.data.results[0]);
     });
-    setProduct(dispatch(getAllProducts()));
   }, []);
 
+  if (!item) return "Loading...";
   return (
     <div className="product-main-container">
       {redirect && <Redirect to="/products" />}
@@ -41,11 +38,8 @@ const Product = (props) => {
       <div className="product-right">
         <div className="right-head">
           <h1> {item.name} </h1>
-          <Link to={"/creator/" + user_id}>
-            <p>
-              By {props.product.products[index].creator_name} - Discover more
-              about his work.
-            </p>
+          <Link to={"/creator/" + item.user_id}>
+            <p>By {item.creator_name} - Discover more about his work.</p>
           </Link>
         </div>
         <div className="right-description">
@@ -73,7 +67,6 @@ const Product = (props) => {
 
 const mapStateToProps = (store) => {
   return {
-    product: store.products,
     cart: store.cart,
   };
 };

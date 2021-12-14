@@ -302,7 +302,7 @@ textarea:focus {
 }
 
 .vase-story-front {
-  background-image: url('../src/assets/images/Vase-story.png');
+  background-image: url('../src/assets/images/story-front.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -317,7 +317,7 @@ textarea:focus {
 }
 
 .vase-story-back {
-  background-image: url('../src/assets/images/Vase-story-2.png');
+  background-image: url('../src/assets/images/story-back.png');
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
@@ -349,6 +349,23 @@ textarea:focus {
 .newsletter-text h2 {
   font-size: 24;
   font-family: 'ClashDisplay-Regular';
+}
+
+.news-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.news-input {
+  margin-bottom: 0;
 }
 
 .p-news{
@@ -429,6 +446,8 @@ textarea:focus {
   display: flex;
   flex-direction: column;
 }
+
+
 
 .form-button {
   cursor: pointer;
@@ -867,5 +886,51 @@ textarea:focus {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+
+
+
+/** COLLECTION **/
+
+.collection__top h1 {
+  font-family: 'ClashDisplay-Regular';
+  font-size: 48px;
+  line-height: 59px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #01161E;
+  margin: 0;
+}
+
+.collection__top p {
+  padding-bottom: 15px;
+}
+
+.collection__top {
+  border-bottom: solid 2px #E09E7266;
+}
+
+.collection__bot {
+  padding-top: 30px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'ClashDisplay-Regular';
+  font-size: 14px;
+  line-height: 30px;
+  color: rgba(1, 22, 30, 0.75);
+  display: flex;
+  margin: auto;
+  text-align: left;
+}
+
+.collection__picture { 
+  height: 400px;
+  width: 800px;
+  background-image: url("../src/assets/Vases/Large/Vases01.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 

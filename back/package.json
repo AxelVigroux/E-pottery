@@ -19,10 +19,12 @@
     "eslint": "^7.32.0",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
+    "googleapis": "^92.0.0",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
+    "nodemailer": "^6.7.2",
     "nodemon": "^2.0.12",
     "promise-mysql": "^5.0.3",
-    "stripe": "^8.171.0"
+    "stripe": "^8.193.0"
   }
 }

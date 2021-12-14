@@ -19,6 +19,8 @@ const CreatorProfile = (props) => {
 
   if (!creator) return "Loading...";
 
+  console.log(user_id);
+
   return (
     <div className="creator-main-container">
       <h2>Hello I'm {creator[0].firstName}, </h2>

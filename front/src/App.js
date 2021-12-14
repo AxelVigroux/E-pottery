@@ -2,8 +2,6 @@ import "./App.css";
 import React from "react";
 import Header from "./containers/header";
 import Home from "./containers/home";
-import Story from "./containers/story";
-import Newsletter from "./containers/newsletter";
 import Register from "./containers/user/register";
 import Login from "./containers/user/login";
 import Logout from "./containers/user/logout";
@@ -14,6 +12,9 @@ import AddProduct from "./containers/products/addProduct";
 import Product from "./containers/products/product";
 import Cart from "./containers/cart";
 import CreatorProfile from "./containers/creators/creatorProfile";
+import Collection from "./containers/collection";
+import Contact from "./containers/contact";
+import Payment from "./containers/payment";
 import { Switch, Route } from "react-router-dom";
 
 /** REFACTO ROAD AND HOME PAGE  **/
@@ -22,12 +23,7 @@ function App() {
     <div className="App">
       <Header />
       <Switch>
-        <Route exact path="/">
-          <Home />
-          <Story />
-          <Newsletter />
-        </Route>
-        <Route exact path="/story" component={Story} />
+        <Route exact path="/" component={Home} />
         <Route exact path="/register" component={Register} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/logout" component={Logout} />
@@ -38,6 +34,9 @@ function App() {
         <Route exact path="/addProduct" component={AddProduct} />
         <Route exact path="/creator/:user_id" component={CreatorProfile} />
         <Route exact path="/cart" component={Cart} />
+        <Route exact path="/collection" component={Collection} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/payment" component={Payment} />
       </Switch>
     </div>
   );

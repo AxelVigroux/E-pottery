@@ -132,6 +132,38 @@ class UserModel {
         connexion.end;
       });
   }
-}
 
+  static async newsletterSubscribe(req) {
+    const connexion = await db();
+
+    return connexion
+      .query("INSERT INTO newsletter (mail, created_at) VALUES (?, NOW())", [
+        req.body.mail,
+      ])
+      .then((subscriber) => {
+        return subscriber;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        connexion.end;
+      });
+  }
+
+  static async getCreators() {
+    const connexion = await db();
+    return connexion
+      .query("SELECT * FROM users WHERE role  = 'creator'")
+      .then((creators) => {
+        return creators;
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        connexion.end;
+      });
+  }
+}
 module.exports = UserModel;
