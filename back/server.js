@@ -12,10 +12,6 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
 // les routes
-app.get("/", (req, res, next) => {
-  res.json({ status: 200, results: "test" });
-});
-
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
 const orderRouter = require("./routes/orderRouter");
