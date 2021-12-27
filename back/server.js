@@ -2,16 +2,20 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 require("dotenv").config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.static(__dirname + "build"));
 app.set("views", "./views");
 app.set("view engine", "ejs");
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 
 // les routes
+app.get("/", (req, res, next) => {
+  res.json({ status: 200, results: "test" });
+});
+
 const userRouter = require("./routes/userRouter");
 const productRouter = require("./routes/productRouter");
 const orderRouter = require("./routes/orderRouter");
@@ -22,5 +26,5 @@ app.use(orderRouter);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
-  console.log("listening port " + PORT + " all is ok");
+  console.log("listening port " + `${PORT}` + " all is ok");
 });

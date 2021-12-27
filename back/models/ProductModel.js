@@ -10,6 +10,7 @@ class ProductsModel {
         return products;
       })
       .catch((err) => {
+        console.log(err);
         return err;
       })
       .finally(() => {

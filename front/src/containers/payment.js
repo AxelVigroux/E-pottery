@@ -1,7 +1,7 @@
-import StripeContainer from "../Stripe/stripeContainer";
+// import StripeContainer from "../Stripe/stripeContainer";
 
-const Payment = (props) => {
-  return <StripeContainer />;
-};
+// const Payment = (props) => {
+//   return <StripeContainer />;
+// };
 
-export default Payment;
+// export default Payment;

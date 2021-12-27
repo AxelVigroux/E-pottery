@@ -3,7 +3,7 @@ const OrderModel = require("../models/OrderModel");
 const ProductModel = require("../models/ProductModel");
 const withAuth = require("../withAuth");
 const cors = require("cors");
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 // router.post("/order/save", async (req, res) => {
 //   console.log("trigger router ?");

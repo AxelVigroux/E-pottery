@@ -1,9 +1,10 @@
 const mysql = require("promise-mysql");
+const config = require("../config");
 
 if (!process.env.HOST_DB) {
-  var config = require("../config");
+  let config = require("../config");
 } else {
-  var config = require("../config-exemple");
+  let config = require("../config-exemple");
 }
 
 const host = process.env.HOST_DB || config.db.host;

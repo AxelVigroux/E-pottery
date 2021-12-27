@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6e4e79ab.chunk.css",
+    "main.js": "/static/js/main.640c307e.chunk.js",
+    "main.js.map": "/static/js/main.640c307e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b836c3cc.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b836c3cc.js.map",
+    "static/js/2.6295f725.chunk.js": "/static/js/2.6295f725.chunk.js",
+    "static/js/2.6295f725.chunk.js.map": "/static/js/2.6295f725.chunk.js.map",
+    "static/js/3.32b42409.chunk.js": "/static/js/3.32b42409.chunk.js",
+    "static/js/3.32b42409.chunk.js.map": "/static/js/3.32b42409.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.6e4e79ab.chunk.css.map": "/static/css/main.6e4e79ab.chunk.css.map",
+    "static/js/2.6295f725.chunk.js.LICENSE.txt": "/static/js/2.6295f725.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/story-front.9928bb4b.png",
+    "static/media/Cart.6af0b88b.svg": "/static/media/Cart.6af0b88b.svg",
+    "static/media/Discover_Arrow.50b02a95.svg": "/static/media/Discover_Arrow.50b02a95.svg",
+    "static/media/minus-solid.355de387.svg": "/static/media/minus-solid.355de387.svg",
+    "static/media/plus-solid.0e456b26.svg": "/static/media/plus-solid.0e456b26.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b836c3cc.js",
+    "static/js/2.6295f725.chunk.js",
+    "static/css/main.6e4e79ab.chunk.css",
+    "static/js/main.640c307e.chunk.js"
+  ]
+}

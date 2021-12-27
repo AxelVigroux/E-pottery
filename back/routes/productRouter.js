@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const ProductsModel = require("../models/ProductModel");
-let config = require("../config");
 const withAuth = require("../withAuth");
 
 /** ONE PRODUCT */
@@ -18,7 +17,7 @@ router.get("/product/:id", async (req, res) => {
 
 /** USER PRODUCT */
 
-router.get("/products/:user_id", async (req, res) => {
+router.get("/products/user/:user_id", async (req, res) => {
   const user_id = req.params.user_id;
 
   let products = await ProductsModel.getProductByUserId(user_id);

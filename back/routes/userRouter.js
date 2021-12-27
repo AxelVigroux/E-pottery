@@ -2,8 +2,15 @@ const bcrypt = require("bcrypt");
 const router = require("express").Router();
 const UserModel = require("../models/UserModel");
 const jwt = require("jsonwebtoken");
-let config = require("../config");
+const config = require("../config");
+
+if (!process.env.HOST_DB) {
+  let config = require("../config");
+} else {
+  let config = require("../config-exemple");
+}
 let secret = config.token.secret;
+
 const withAuth = require("../withAuth");
 const sendMail = require("../utils/mailer");
 

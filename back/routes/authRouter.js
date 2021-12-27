@@ -1,6 +1,4 @@
 const withAuth = require("../withAuth");
-const jwt = require("jsonwebtoken");
-const secret = config.token.secret;
 
 module.exports = (app, db) => {
   const userModel = require("../models/UserModel")(db);
