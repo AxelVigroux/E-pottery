@@ -108,7 +108,7 @@ class UserModel {
 
     return connexion
       .query(
-        "UPDATE users SET role = ?, firstName = ?, lastName = ?, email = ?, address = ?, zip = ?, city = ?, phone = ?,description = ?, updated_at = NOW()  WHERE id = ?",
+        "UPDATE users SET role = ?, firstName = ?, lastName = ?, email = ?, address = ?, zip = ?, city = ?, phone = ?,description = ?,   WHERE id = ?",
         [
           req.body.role,
           req.body.firstName,

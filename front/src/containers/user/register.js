@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Redirect, Link } from "react-router-dom";
 import { saveUser } from "../../api/user";
 
 const Register = (props) => {
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("Customer");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");

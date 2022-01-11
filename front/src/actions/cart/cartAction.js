@@ -1,4 +1,4 @@
-import { MODIFY_CART, ADD_QUANTITY } from "./actions-types";
+import { MODIFY_CART } from "./actions-types";
 
 export const modifyCart = (cart, newProduct, quantityInCart) => {
   return function (dispatch) {

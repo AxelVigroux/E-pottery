@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { config } from "../config";
@@ -17,11 +17,13 @@ const Collection = (props) => {
   useEffect(() => {
     axios.get(config.api_url + "/user/" + id).then((res) => {
       console.log("ROUTE DU CREATORS", res.data.results);
-      setUser(res.data.results);
+      setUser(res.data.results[0]);
     });
   }, []);
 
   const creator = user;
+
+  console.log(creator);
 
   if (!creator) return "Loading...";
   return (
@@ -33,7 +35,9 @@ const Collection = (props) => {
       <div className="collection__bot">
         <div className="collection__picture"></div>
         <Link to={"/creator/" + id}>
-          <h3>Featured this month : {creator.firstName}</h3>
+          <h3>
+            Featured this month : {creator.firstName} {creator.lastName}
+          </h3>
         </Link>
       </div>
     </div>

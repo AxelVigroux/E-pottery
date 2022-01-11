@@ -13,3 +13,15 @@ module.exports = {
 };
 
 // // mysql://b38ba1bae3e1df:aa160da8@eu-cdbr-west-02.cleardb.net/heroku_1ce835d09544bbc?reconnect=true
+
+// module.exports = {
+//   db: {
+//     host: "localhost",
+//     database: "e-pottery",
+//     user: "root",
+//     password: "",
+//   },
+//   token: {
+//     secret: "saucissemerguez",
+//   },
+// };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect, useDispatch } from "react-redux";
-import { Redirect, Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { getAllProducts } from "../../actions/products/productAction";
 import axios from "axios";
 import { config } from "../../config";
@@ -17,7 +17,7 @@ const AddProduct = (props) => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect((dispatch) => {
     setProducts(dispatch(getAllProducts()));
   });
 

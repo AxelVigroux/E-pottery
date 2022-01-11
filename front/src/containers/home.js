@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import arrow from "../assets/images/Discover_Arrow.svg";
+import vases from "../assets/Vases/Large/Vases01.png";
 import { Link } from "react-router-dom";
 import { config } from "../config";
 import axios from "axios";
@@ -12,13 +13,10 @@ const Home = (props) => {
       mail: mail,
     };
 
-    console.log(data);
-
     axios
       .post(config.api_url + "/user/newsletter", data)
       .then((response) => {
-        console.log("RESPONSE API FRONT", response);
-        // setPopUp
+        return response;
       })
       .catch((err) => {
         console.log(err);
@@ -33,10 +31,17 @@ const Home = (props) => {
         <div className="homepage-picture-text">
           <Link to="/products">
             <ul>
-              <li>
-                <img src={arrow} className="arrow"></img>
-              </li>
-              <li>Explore our products</li>
+              <div className="arrow-text">
+                <li>
+                  <img src={arrow} className="arrow" alt="arrow picture" />
+                </li>
+                <li>Explore our products</li>
+              </div>
+              <img
+                src={vases}
+                className="bg__home"
+                alt="vases for background picture"
+              />
             </ul>
           </Link>
         </div>
@@ -44,7 +49,7 @@ const Home = (props) => {
 
       {/* /** STORY */}
 
-      <div className="story-main">
+      <div className="story-main" id="story">
         <div className="background-story"></div>
         <div className="vase-story-front"></div>
         <div className="vase-story-back"></div>
@@ -104,7 +109,7 @@ const Home = (props) => {
                 }}
               />
               <button className="news-button" type="submit" value="Register">
-                <img src={arrow} className="arrow-news" />
+                <img src={arrow} className="arrow-news" alt="arrow picture" />
               </button>
             </form>
           </div>

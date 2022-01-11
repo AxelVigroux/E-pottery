@@ -33,5 +33,4 @@ export default function CartReducer(state = initialState, action) {
     default:
       return state;
   }
-  return state;
 }

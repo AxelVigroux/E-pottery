@@ -38,7 +38,11 @@ const Cart = (props) => {
                               props.modifyCart(props.cart.cart, item, -1);
                             }}
                           >
-                            <img className="cart-icons" src={Minus} />
+                            <img
+                              className="cart-icons"
+                              src={Minus}
+                              alt="minus logo"
+                            />
                           </button>
                         </li>
                       ) : (
@@ -51,7 +55,11 @@ const Cart = (props) => {
                             props.modifyCart(props.cart.cart, item, 1);
                           }}
                         >
-                          <img className="cart-icons" src={Plus} />
+                          <img
+                            className="cart-icons"
+                            src={Plus}
+                            alt="plus logo"
+                          />
                         </button>
                       </li>
                     </ul>

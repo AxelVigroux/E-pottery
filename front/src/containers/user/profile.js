@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { logged_in_user } from "../../actions/user/userAction";
 import * as reactRedux from "react-redux";
 import { Link } from "react-router-dom";
@@ -13,7 +13,10 @@ const Profile = (props) => {
       <div className="profile-informations">
         <h3>Informations</h3>
         <ul>
-          <li> {props.user.user.role}</li>
+          <li>
+            <span>Role : </span>
+            {props.user.user.role}
+          </li>
           <li>
             <span>Email : </span> {props.user.user.email}
           </li>

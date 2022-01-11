@@ -1,12 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
 import { config } from "../../config";
 import { Link } from "react-router-dom";
 
 const CreatorProfile = (props) => {
   const [creator, setCreator] = useState(null);
-
   const { user_id } = props.match.params;
 
   useEffect(() => {
