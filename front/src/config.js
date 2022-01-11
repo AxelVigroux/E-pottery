@@ -1,5 +1,5 @@
 export const config = {
-  api_url: "http://localhost:8000",
+  api_url: "https://epottery.herokuapp.com",
 };
 
-// ("https://epottery.herokuapp.com");
+// "http://localhost:8000"
