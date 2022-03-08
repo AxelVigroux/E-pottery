@@ -85,7 +85,7 @@ class ProductsModel {
       });
   }
 
-  static async updateOneProduct(id) {
+  static async updateOneProduct(id, req) {
     const connexion = await db();
 
     return connexion
@@ -136,7 +136,7 @@ class ProductsModel {
         req.body.id,
       ])
       .then((response) => {
-        console.log("RESULT PRODUCT MODEL UPDATA PICTURE", response);
+        console.log("RESULT PRODUCT MODEL UPDATE PICTURE", response);
         return response;
       })
       .catch((err) => {

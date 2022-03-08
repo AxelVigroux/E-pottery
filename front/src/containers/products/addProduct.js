@@ -17,7 +17,7 @@ const AddProduct = (props) => {
 
   const dispatch = useDispatch();
 
-  useEffect((dispatch) => {
+  useEffect(() => {
     setProducts(dispatch(getAllProducts()));
   });
 
@@ -49,7 +49,7 @@ const AddProduct = (props) => {
     //paramètrage de l'interface
     let widget = window.cloudinary.createUploadWidget(
       {
-        cloudName: "du7ab0zzw", //nom de mon cloud
+        cloudName: process.env.CLOUD_NAME, //nom de mon cloud
         uploadPreset: "E-pottery", //dossier ou l'on veut envoyer
         maxImageWidth: 800, //on peut paramètrer la taille max de l'image
         cropping: false, //recadrage

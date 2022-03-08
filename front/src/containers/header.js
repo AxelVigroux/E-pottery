@@ -19,6 +19,7 @@ const Header = (props) => {
       {props.user.isLogged ? (
         <div className="dynamics-header">
           <Link to="/profile">Profile</Link>
+          <Link to="/addProduct">Add Product</Link>
           <Link to="/cart">Cart</Link>
         </div>
       ) : (

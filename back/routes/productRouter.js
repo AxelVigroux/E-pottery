@@ -52,7 +52,7 @@ router.post("/product/add", withAuth, async (req, res) => {
 
 /** PICTURE */
 
-router.post("/product/picture", withAuth, async (req, res, next) => {
+router.post("/product/picture", withAuth, async (req, res) => {
   let product = await ProductsModel.updatePicture(req);
 
   if (product.code) {

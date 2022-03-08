@@ -8,6 +8,9 @@ const initialState = {
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGGED_IN_USER:
+      const initialState = {
+        isLogged: false,
+      };
       return { ...state, user: action.payload, isLogged: true };
 
     case LOGOUT_USER:
